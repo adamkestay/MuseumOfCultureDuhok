@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Museum of Culture</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="thank-you-screen">
+        <div class="thank-you-card">
+            <div class="check-icon">✓</div>
+            <h1>Thank You!</h1>
+            <p>Your visit notification has been sent successfully. We look forward to welcoming you to the Museum of Culture.</p>
+            <a href="index.html" class="btn">Return to Home</a>
+        </div>
+    </div>
+    <script>
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+</body>
+</html>

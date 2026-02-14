@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum of Culture</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-menu">
+                <div class="nav-links">
+                    <a href="#about" data-i18n="about">About</a>
+                    <a href="#exhibits" data-i18n="exhibits">Exhibits</a>
+                    <a href="#gallery" data-i18n="gallery">Gallery</a>
+                    <a href="#events" data-i18n="events">Events</a>
+                    <a href="#location" data-i18n="location">Location</a>
+                    <a href="#contact" data-i18n="contact">Contact</a>
+                </div>
+                <div class="nav-buttons">
+                    <button id="language-toggle" data-i18n="langButton">کوردی</button>
+                    <button id="dark-mode-toggle">Dark Theme</button>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 data-i18n="header-title">Museum of Culture</h1>
+            <p data-i18n="header-subtitle">Preserving Heritage, Inspiring Future</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 data-i18n="about-title">About the Museum</h2>
+            <p class="about-intro" data-i18n="about-text">
+                The Museum of Culture is dedicated to preserving cultural heritage,
+                showcasing traditional artifacts, and educating future generations
+                about history and identity.
+            </p>
+            <div class="about-grid">
+                <div class="about-card reveal">
+                    <h3 data-i18n="about-mission-title">Our Mission</h3>
+                    <p data-i18n="about-mission-text">To preserve, celebrate, and share the rich cultural heritage of our people with the world, ensuring that traditions and stories are never forgotten.</p>
+                </div>
+                <div class="about-card reveal">
+                    <h3 data-i18n="about-vision-title">Our Vision</h3>
+                    <p data-i18n="about-vision-text">To be a beacon of cultural preservation and education, fostering understanding and appreciation for diverse traditions and histories.</p>
+                </div>
+                <div class="about-card reveal">
+                    <h3 data-i18n="about-values-title">Our Values</h3>
+                    <p data-i18n="about-values-text">Authenticity, respect, education, and community engagement guide everything we do in preserving our cultural legacy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exhibits Section -->
+    <section id="exhibits" class="section">
+        <div class="container">
+            <h2 data-i18n="exhibits-title">Exhibits</h2>
+            <div class="exhibits-grid">
+                <div class="exhibit-card reveal">
+                    <h3 data-i18n="exhibit1-title">Traditional Clothing</h3>
+                    <p data-i18n="exhibit1-desc">Explore authentic Kurdish garments and textiles.</p>
+                </div>
+                <div class="exhibit-card reveal">
+                    <h3 data-i18n="exhibit2-title">Ancient Tools & Artifacts</h3>
+                    <p data-i18n="exhibit2-desc">Discover tools from our ancestors' daily lives.</p>
+                </div>
+                <div class="exhibit-card reveal">
+                    <h3 data-i18n="exhibit3-title">Music and Instruments</h3>
+                    <p data-i18n="exhibit3-desc">Hear the melodies of traditional Kurdish music.</p>
+                </div>
+                <div class="exhibit-card reveal">
+                    <h3 data-i18n="exhibit4-title">Historical Documents</h3>
+                    <p data-i18n="exhibit4-desc">Read stories from our rich history.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2 data-i18n="gallery-title">Gallery</h2>
+            <div class="gallery-grid">
+                <img src="pics/duhok-cultur-museumm.jpg" alt="Traditional Artifact 1" class="reveal">
+                <img src="pics/1652973977IMG_4573.jpg" alt="Traditional Artifact 2" class="reveal">
+                <img src="pics/1652974093IMG_4566.jpg" alt="Traditional Artifact 3" class="reveal">
+                <img src="pics/duhok-cultur-museumm.jpg" alt="Traditional Artifact 4" class="reveal">
+                <img src="pics/1652973977IMG_4573.jpg" alt="Traditional Artifact 5" class="reveal">
+                <img src="pics/1652974093IMG_4566.jpg" alt="Traditional Artifact 6" class="reveal">
+                <img src="pics/duhok-cultur-museumm.jpg" alt="Traditional Artifact 7" class="reveal">
+                <img src="pics/1652973977IMG_4573.jpg" alt="Traditional Artifact 8" class="reveal">
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <!-- Events Section -->
+    <section id="events" class="section">
+        <div class="container">
+            <h2 data-i18n="events-title">Upcoming Events</h2>
+            <div class="events-list">
+                <div class="event-item reveal">
+                    <h3 data-i18n="event1-title">Workshop on Traditional Crafts</h3>
+                    <p>March 15, 2026</p>
+                    <p data-i18n="event1-desc">Join us for hands-on crafting sessions.</p>
+                </div>
+                <div class="event-item reveal">
+                    <h3 data-i18n="event2-title">Lecture on Kurdish History</h3>
+                    <p>April 20, 2026</p>
+                    <p data-i18n="event2-desc">Learn from renowned historians.</p>
+                </div>
+                <div class="event-item reveal">
+                    <h3 data-i18n="event3-title">Cultural Festival</h3>
+                    <p>May 10, 2026</p>
+                    <p data-i18n="event3-desc">Celebrate with music, dance, and food.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visitor Information Section -->
+    <section id="visitor-info" class="section">
+        <div class="container">
+            <h2 data-i18n="visitor-title">Visitor Information</h2>
+            <div class="info-grid">
+                <div>
+                    <h3 data-i18n="hours-title">Opening Hours</h3>
+                    <p data-i18n="hours-weekday">Monday to Friday: 9 AM - 5 PM</p>
+                    <p data-i18n="hours-saturday">Saturday: 10 AM - 4 PM</p>
+                    <p data-i18n="hours-sunday">Sunday: Closed</p>
+                </div>
+                <div>
+                    <h3 data-i18n="admission-title">Admission</h3>
+                    <p data-i18n="admission-text">Free for all visitors</p>
+                </div>
+                <div>
+                    <h3 data-i18n="facilities-title">Facilities</h3>
+                    <p data-i18n="facilities-text">Wheelchair accessible, Free Wi-Fi, Cafeteria</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="section">
+        <div class="container">
+            <h2 data-i18n="location-title">Location</h2>
+            <div class="location-grid">
+                <div class="location-details">
+                    <p data-i18n="location-text">Visit us at our museum located in Duhok, Etite, Kurdistan. We're easily accessible and welcome visitors from around the world.</p>
+                    
+                    <div class="location-info-group">
+                        <h3 data-i18n="location-address-title">Address</h3>
+                        <p data-i18n="location-address-text">123 Culture Avenue, Duhok, 42001, Kurdistan</p>
+                    </div>
+
+                    <div class="location-info-group">
+                        <h3 data-i18n="location-transit-title">Public Transit</h3>
+                        <p data-i18n="location-transit-text">Accessible via bus lines 5 and 12. The nearest bus stop is 'Museum Central', just a 5-minute walk away.</p>
+                    </div>
+
+                    <div class="location-info-group">
+                        <h3 data-i18n="location-parking-title">Parking</h3>
+                        <p data-i18n="location-parking-text">Free parking is available for all visitors in the lot adjacent to the museum.</p>
+                    </div>
+
+                    <a href="https://www.google.com/maps/search/?api=1&query=36.84408408884799,43.073027706009796" target="_blank" class="btn" data-i18n="location-directions-button">Get Directions</a>
+                </div>
+                <div id="map-container">
+                    <div id="map" style="height: 450px; width: 100%; min-height: 450px;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect & Plan Section (Combined) -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 data-i18n="connect-title">Plan Your Visit & Connect</h2>
+            
+            <div class="connect-grid">
+                <!-- Left Column: Contact Info & FAQ -->
+                <div class="connect-column">
+                    <!-- Contact Info Block -->
+                    <div class="info-block reveal">
+                        <h3 data-i18n="contact-title">Contact Us</h3>
+                        <div class="contact-grid" style="grid-template-columns: 1fr; gap: 20px; box-shadow: none; border: none; padding: 0;">
+                            <div style="box-shadow: none; border: none; padding: 0; background: transparent;">
+                                <p><strong data-i18n="contact-email-label">Email:</strong> info@museumofculture.com</p>
+                                <p><strong data-i18n="contact-phone-label">Phone:</strong> +964 750 000 0000</p>
+                                <p><strong data-i18n="contact-location-label">Location:</strong> Duhok, Kurdistan</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Block -->
+                    <div id="faq" class="info-block reveal">
+                        <h3 data-i18n="faq-title">Frequently Asked Questions</h3>
+                        <div class="faq-accordion">
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span data-i18n="faq-q1">What are the museum's opening hours?</span>
+                                    <span class="icon">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p data-i18n="faq-a1">We are open Monday to Friday from 9 AM to 5 PM, and Saturday from 10 AM to 4 PM. We are closed on Sundays.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span data-i18n="faq-q2">Is there an admission fee?</span>
+                                    <span class="icon">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p data-i18n="faq-a2">No, admission to the Museum of Culture is completely free for all visitors.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span data-i18n="faq-q3">Is the museum wheelchair accessible?</span>
+                                    <span class="icon">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p data-i18n="faq-a3">Yes, our facility is fully wheelchair accessible with ramps and elevators to all floors.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span data-i18n="faq-q4">Can I take photos inside?</span>
+                                    <span class="icon">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p data-i18n="faq-a4">Photography is allowed for personal use, but please refrain from using flash to preserve the artifacts.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Notify Form -->
+                <div class="connect-column">
+                    <div id="visit-notification" class="info-block reveal">
+                        <h3 data-i18n="visit-notification-title">Notify Your Visit</h3>
+                        <p class="section-desc" data-i18n="visit-notification-desc" style="text-align: left; margin-bottom: 30px; margin-left: 0;">Let us know when you plan to visit and we'll prepare for your arrival!</p>
+                        
+                        <form class="notification-form" action="https://formsubmit.co/adambarware555@gmail.com" method="POST" target="_blank">
+                            <!-- FormSubmit Configuration -->
+                            <input type="hidden" name="_subject" value="New Museum Visit Notification">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_next" value="">
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="visit-name" data-i18n="visit-name-label">Name *</label>
+                                    <input type="text" id="visit-name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="visit-email" data-i18n="visit-email-label">Email *</label>
+                                    <input type="email" id="visit-email" name="email" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="visit-phone" data-i18n="visit-phone-label">Phone Number *</label>
+                                    <input type="tel" id="visit-phone" name="phone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="visit-date" data-i18n="visit-date-label">Visit Date *</label>
+                                    <input type="date" id="visit-date" name="visit_date" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="visit-message" data-i18n="visit-message-label">Additional Message</label>
+                                <textarea id="visit-message" name="message" rows="4" data-i18n="visit-message-placeholder" placeholder="Any special requests or questions?"></textarea>
+                            </div>
+                            <button type="submit" class="btn" data-i18n="visit-submit">Submit Notification</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <button id="back-to-top" title="Go to top">↑</button>
+
+    <script src="script.js"></script>
+
+
+
+</body>
+</html>
