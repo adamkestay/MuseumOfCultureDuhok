@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 14px;
+}
+
 @keyframes fadeInDown {
     from {
         opacity: 0;
